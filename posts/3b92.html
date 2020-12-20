@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="~~~"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Evan"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="React学习笔记"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="~~~"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Evan&#39;s cabin"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://chenaiwen.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://chenaiwen.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>React学习笔记 - Evan&#39;s cabin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Evan's cabin" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Evan's blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>React学习笔记</h1>
+                    
+                    <h2 class="post-subheading">
+                        创建第一个小项目~
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-10-15
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <meta name="referrer" content="no-referrer">
+
+<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="为什么使用react？"><a href="#为什么使用react？" class="headerlink" title="为什么使用react？"></a>为什么使用react？</h2><ol>
+<li><p>简单易学</p>
+</li>
+<li><p>开发迅速</p>
+</li>
+<li><p>大公司背书</p>
+</li>
+<li><p>社区强大</p>
+</li>
+<li><p>工作要求</p>
+</li>
+</ol>
+<h2 id="什么是React？"><a href="#什么是React？" class="headerlink" title="什么是React？"></a>什么是React？</h2><p>React用于构建用户界面的JavaScript库。</p>
+<p>React是专注于视图的构建，不是一个请求库，也不是一个打包工具，主要提供UI层面的解决方案。它并不是一个框架，并不能解决项目中的所有问题。</p>
+<h2 id="React三大特性："><a href="#React三大特性：" class="headerlink" title="React三大特性："></a>React三大特性：</h2><ol>
+<li><h4 id="声明式编程"><a href="#声明式编程" class="headerlink" title="声明式编程"></a>声明式编程</h4><p>​    命令式编程：用代码告诉计算机去做什么。</p>
+<p>​    声明式编程：通过代码告诉计算机。你想要的是什么，让计算机想出如何去做。</p>
+</li>
+<li><h4 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h4><p>​    React提供了一种全新的语法扩展JSX，讲渲染逻辑和ui逻辑结合在一起，这个结合体就被称为组  J 件。</p>
+</li>
+<li><h4 id="一次学习，随处编写"><a href="#一次学习，随处编写" class="headerlink" title="一次学习，随处编写"></a>一次学习，随处编写</h4><p>​    学会react后可以在很多地方使用react语法来写代码，比如使用react来编写web端的页面； react+react native来写手机客户端APP；react+react 360开发VR界面。</p>
+</li>
+</ol>
+<h2 id="Create-React-App（CRA"><a href="#Create-React-App（CRA" class="headerlink" title="Create-React-App（CRA)"></a>Create-React-App（CRA)</h2><p>​        —-官方提供的脚手架工具。</p>
+<h3 id="创建一个create-react-app"><a href="#创建一个create-react-app" class="headerlink" title="创建一个create-react-app"></a>创建一个create-react-app</h3><h4 id="（前提："><a href="#（前提：" class="headerlink" title="（前提："></a>（前提：</h4><p>​                1. 安装并会使用node，包括包管理工具npm或者yarn。</p>
+<p>​                 2. 了解ES6语法。）</p>
+<h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><ol>
+<li><h5 id="npx-create-react-app-项目名"><a href="#npx-create-react-app-项目名" class="headerlink" title="npx create-react-app 项目名"></a>npx create-react-app 项目名</h5><p>( 或者npm install –g create-react-app</p>
+<p>   create-react-app 项目名 )</p>
+</li>
+</ol>
+<ol start="2">
+<li><h5 id="用vscode打开项目"><a href="#用vscode打开项目" class="headerlink" title="用vscode打开项目"></a>用vscode打开项目</h5><p>Package.jason中</p>
+<pre class=" language-js"><code class="language-js"><span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token string">"start"</span><span class="token punctuation">:</span> <span class="token string">"react-scripts start"</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//启动项目</span>
+    <span class="token string">"build"</span><span class="token punctuation">:</span> <span class="token string">"react-scripts build"</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//打包构建项目</span>
+    <span class="token string">"test"</span><span class="token punctuation">:</span> <span class="token string">"react-scripts test"</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//运行测试</span>
+    <span class="token string">"eject"</span><span class="token punctuation">:</span> <span class="token string">"react-scripts eject"</span>  <span class="token comment" spellcheck="true">//暴露webpack配置</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>React script是CRA提供的命令工具.</p>
+</li>
+</ol>
+<ol start="3">
+<li><h5 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h5><p>在index.js中先import：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span></code></pre>
+<p>react并不负责渲染，所以在浏览器端需要引入React Dom来做渲染。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> ReactDom <span class="token keyword">from</span> <span class="token string">'react-dom'</span></code></pre>
+</li>
+</ol>
+<pre><code>  再调用React Dom上的render方法。render的方法接受两个参数，第一个参数可以传入react组件或者react元素。第二个参数传入一个DOM元素作为渲染器的根节点。（一般会在html页面里面写一个id为root的div元素作为根节点，一般只有一个root节点）
+
+
+
+  ```js</code></pre>
+<p>   ReactDom.render(element, document.getElementById(“root”));<br>      ```</p>
+<pre><code>  在index.js中写的html不是html，是JSX，react定义的一种语法，实际上是个对象。
+
+  ```js
+  例： const element = &lt;h1&gt;hello world!&lt;/h1&gt;;
+  ```</code></pre>
+<ol start="4">
+<li><h5 id="启动项目："><a href="#启动项目：" class="headerlink" title="启动项目："></a>启动项目：</h5><p>npm start</p>
+</li>
+</ol>
+<ol start="5">
+<li><h5 id="配置VSCode-debugger功能："><a href="#配置VSCode-debugger功能：" class="headerlink" title="配置VSCode debugger功能："></a>配置VSCode debugger功能：</h5><p>在项目根目录中创建.vscode\launch.json文件，输入如下代码：</p>
+<pre class=" language-js"><code class="language-js"><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>
+    <span class="token string">"configurations"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Chrome"</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//配置名称</span>
+        <span class="token string">"type"</span><span class="token punctuation">:</span> <span class="token string">"chrome"</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//启动的浏览器</span>
+        <span class="token string">"request"</span><span class="token punctuation">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//启动方式</span>
+        <span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"http://localhost:3000"</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//启动浏览器后自动访问的地址</span>
+        <span class="token string">"webRoot"</span><span class="token punctuation">:</span> <span class="token string">"$&amp;#123;workspaceRoot&amp;#125;/src"</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//源代码所在目录</span>
+        <span class="token string">"sourceMapPathOverrides"</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+          <span class="token string">"webpack:///src/*"</span><span class="token punctuation">:</span> <span class="token string">"$&amp;#123;webRoot&amp;#125;/*"</span>   <span class="token operator">/</span><span class="token operator">/</span>sourcemap所在目录
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">]</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>（配置代码可以在create-react-app中的development下的editor setup中找到）</p>
+</li>
+</ol>
+<ol start="6">
+<li><h5 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h5><p>配置好之后在index.js的第六行打个断点，然后进入Vscode的debug窗口，点击运行，如果代码在运行到第六行就卡住了，并且在编译器的左边出现了变量和调用栈，则说明配置成功了。</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/evan1002/blog-pictures/raw/master/20201016201257.png" alt="变量和调用栈"></p>
+<p>至此，本地开发环境就基本搭建好了。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Evan<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

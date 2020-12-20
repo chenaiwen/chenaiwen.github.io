@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Evan&#39;s cabin</title>
+  
+  <subtitle>Welcome to my little cabin!</subtitle>
+  <link href="https://chenaiwen.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://chenaiwen.github.io/"/>
+  <updated>2020-12-20T13:47:18.373Z</updated>
+  <id>https://chenaiwen.github.io/</id>
+  
+  <author>
+    <name>Evan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue中main.js App.vue router.js等文件的简单介绍</title>
+    <link href="https://chenaiwen.github.io/posts/a1fb.html"/>
+    <id>https://chenaiwen.github.io/posts/a1fb.html</id>
+    <published>2020-12-20T10:41:23.000Z</published>
+    <updated>2020-12-20T13:47:18.373Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、-main-js&quot;&gt;&lt;a href=&quot;#一、-main-js&quot; class=&quot;headerlink&quot; title=&quot;一、 main.js&quot;&gt;&lt;/a&gt;一、 main.js&lt;/h2&gt;&lt;p&gt;​       </summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://chenaiwen.github.io/categories/Vue/"/>
+    
+    
+    <category term="Vue" scheme="https://chenaiwen.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习笔记</title>
+    <link href="https://chenaiwen.github.io/posts/e0b8.html"/>
+    <id>https://chenaiwen.github.io/posts/e0b8.html</id>
+    <published>2020-10-28T12:36:53.000Z</published>
+    <updated>2020-10-30T01:42:35.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一-简介&quot;&gt;&lt;a href=&quot;#一-简介&quot; class=&quot;headerlink&quot; title=&quot;一. 简介&quot;&gt;&lt;/a&gt;一. 简介&lt;/h1&gt;&lt;p&gt;​    Vue 是一套构建用户界面的渐进式框架，它只关注视图层， 采用自底向上增量开发的设计，目标是通过尽可能简单的</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="https://chenaiwen.github.io/categories/Vue/"/>
+    
+    
+    <category term="Vue" scheme="https://chenaiwen.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript数组用法浅析</title>
+    <link href="https://chenaiwen.github.io/posts/a65c.html"/>
+    <id>https://chenaiwen.github.io/posts/a65c.html</id>
+    <published>2020-10-19T07:10:52.000Z</published>
+    <updated>2020-10-20T12:36:50.630Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Array基础&quot;&gt;&lt;a href=&quot;#Array基础&quot; class=&quot;headerlink&quot; title=&quot;Array基础&quot;&gt;&lt;/a&gt;Array基础&lt;/h2&gt;&lt;h3 id=&quot;创建一个数组&quot;&gt;&lt;a href=&quot;#创建一个数组&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="https://chenaiwen.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="数组" scheme="https://chenaiwen.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="front end" scheme="https://chenaiwen.github.io/tags/front-end/"/>
+    
+    <category term="前端" scheme="https://chenaiwen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="https://chenaiwen.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文章图片显示问题</title>
+    <link href="https://chenaiwen.github.io/posts/2c5e.html"/>
+    <id>https://chenaiwen.github.io/posts/2c5e.html</id>
+    <published>2020-10-16T12:16:48.000Z</published>
+    <updated>2020-10-18T00:01:40.594Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    当我们在Typora写完带有图片的文章并上传后，会发现在hexo中图片无法显示，因为hexo无法引用本地图片。这篇文章介绍使用Gitee+PicGo+Typora来解决这个问题。&lt;/p&gt;
+&lt;p&gt;​    一. 创建Gitee仓库&lt;/p&gt;
+&lt;p&gt;​        </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记</title>
+    <link href="https://chenaiwen.github.io/posts/3b92.html"/>
+    <id>https://chenaiwen.github.io/posts/3b92.html</id>
+    <published>2020-10-15T12:33:49.000Z</published>
+    <updated>2020-10-19T07:20:05.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;h1 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="React" scheme="https://chenaiwen.github.io/categories/React/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前端书籍</title>
+    <link href="https://chenaiwen.github.io/posts/3ec8.html"/>
+    <id>https://chenaiwen.github.io/posts/3ec8.html</id>
+    <published>2020-10-09T10:35:52.000Z</published>
+    <updated>2020-10-19T10:38:13.661Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;语法类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;JavaScript高级程序设计（红宝书，经典）&lt;/li&gt;
+&lt;li&gt;JavaScript DOM </summary>
+        
+      
+    
+    
+    
+    <category term="资料" scheme="https://chenaiwen.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="front end" scheme="https://chenaiwen.github.io/tags/front-end/"/>
+    
+    <category term="前端" scheme="https://chenaiwen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端学习路线</title>
+    <link href="https://chenaiwen.github.io/posts/2b2d.html"/>
+    <id>https://chenaiwen.github.io/posts/2b2d.html</id>
+    <published>2020-10-09T10:26:43.000Z</published>
+    <updated>2020-10-19T10:38:19.937Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;B站主播objtube的卢克儿推荐的前端学习路线。&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="资料" scheme="https://chenaiwen.github.io/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+    <category term="front end" scheme="https://chenaiwen.github.io/tags/front-end/"/>
+    
+    <category term="前端" scheme="https://chenaiwen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
