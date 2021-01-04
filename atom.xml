@@ -6,7 +6,7 @@
   <link href="https://chenaiwen.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenaiwen.github.io/"/>
-  <updated>2020-12-21T13:52:45.235Z</updated>
+  <updated>2021-01-04T13:46:19.444Z</updated>
   <id>https://chenaiwen.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOC原理</title>
+    <link href="https://chenaiwen.github.io/posts/8c60.html"/>
+    <id>https://chenaiwen.github.io/posts/8c60.html</id>
+    <published>2021-01-04T07:56:12.000Z</published>
+    <updated>2021-01-04T13:46:19.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Spring框架概述&quot;&gt;&lt;a href=&quot;#一、Spring框架概述&quot; class=&quot;headerlink&quot; title=&quot;一、Spring框架概述&quot;&gt;&lt;/a&gt;一、Spring框架概述&lt;/h2&gt;&lt;h3 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Spring学习笔记" scheme="https://chenaiwen.github.io/categories/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Spring" scheme="https://chenaiwen.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>vue中main.js App.vue router.js等文件的简单介绍</title>
