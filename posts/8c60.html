@@ -263,30 +263,26 @@
 </li>
 </ol>
 <h3 id="3-IOC简介"><a href="#3-IOC简介" class="headerlink" title="3. IOC简介"></a>3. IOC简介</h3><ol>
-<li><p>概念</p>
-<p>控制反转，把创建对象和对象之间的调用过程交给Spring管理。使用IOC的目的是降低耦合度。</p>
+<li><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>控制反转，把创建对象和对象之间的调用过程交给Spring管理。使用IOC的目的是降低耦合度。</p>
 <p>借助于“第三方”实现具有依赖关系的对象之间的解耦，这个“第三方“就是IOC。</p>
 <p>如果对象A依赖于对象B，那么对象A在初始化或者运行到某一点的时候，自己必须主动去创建对象B或者使用已经创建的对象B。无论是创建还是使用对象B，控制权都在自己手上。 软件系统在引入IOC容器之后，这种情形就完全改变了，由于IOC容器的加入，对象A与对象B之间失去了直接联系，所以，当对象A运行到需要对象B的时候，IOC容器会主动创建一个对象B注入到对象A需要的地方。对象A获得依赖对象B的过程,由主动行为变为了被动行为，控制权颠倒过来了，这就是“控制反转”这个名称的由来。</p>
 <p>IOC也叫依赖注入(DI), 所谓依赖注入，就是由IOC容器在运行期间，动态地将某种依赖关系注入到对象之中。所以，依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情。</p>
 </li>
 </ol>
 <ol start="2">
-<li><p>IOC接口</p>
-<p>1） IOC思想基于IOC容器完成，IOC容器底层就是对象工厂</p>
+<li><h4 id="IOC接口"><a href="#IOC接口" class="headerlink" title="IOC接口"></a>IOC接口</h4><p>1） IOC思想基于IOC容器完成，IOC容器底层就是对象工厂</p>
 <p>2）Spring提供IOC容器实现两种方式（两个接口）：</p>
 <p>​    a. BeanFactory: IOC容器基本实现方式， 是spring的内部使用接口，不提供开发人员使用（加载        配置文件时不会创建对象，在获取（使用）对象时才去创建对象）</p>
 <p>​    b. ApplicationContext：BeanFactory接口的子接口，提供更多更强大的功能，开发人员使用        （加载配置文件时就会把配置文件中的对象创建）</p>
 </li>
 </ol>
 <ol start="3">
-<li><p>IOC操作Bean管理</p>
-<p>Bean管理包括两个部分：</p>
+<li><h4 id="IOC操作Bean管理"><a href="#IOC操作Bean管理" class="headerlink" title="IOC操作Bean管理"></a>IOC操作Bean管理</h4><p>Bean管理包括两个部分：</p>
 <p>a. Spring创建对象</p>
 <p>b. Spring注入属性</p>
 </li>
 </ol>
-<p>​        Bean管理操作有两种方式：</p>
-<p>基于xml配置文件方式实现</p>
+<h5 id="3-1-Spring创建对象"><a href="#3-1-Spring创建对象" class="headerlink" title="3.1 Spring创建对象"></a>3.1 Spring创建对象</h5><p>基于xml配置文件方式实现</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置User对象<span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"user"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.User"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span> 
 </code></pre>
@@ -296,10 +292,7 @@
 <p>​        class: 类的全路径</p>
 <p>​        name: 与id类似，name中可以加特殊符号，id不行</p>
 <p>c.   创建对象时，默认也是执行无参构造方法</p>
-<p>基于xml方式注入属性</p>
-<ol>
-<li>使用set方法进行注入：</li>
-</ol>
+<h5 id="3-2-Spring注入属性"><a href="#3-2-Spring注入属性" class="headerlink" title="3.2  Spring注入属性"></a>3.2  Spring注入属性</h5><h6 id="基于xml方式注入属性"><a href="#基于xml方式注入属性" class="headerlink" title="基于xml方式注入属性"></a>基于xml方式注入属性</h6><p>​    3.2.1 使用set方法进行注入：</p>
 <p>​        在类中定义参数和set方法</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> String bname<span class="token punctuation">;</span>
 <span class="token keyword">private</span> String bauthor<span class="token punctuation">;</span>
@@ -328,7 +321,7 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
 
 book<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>​    第二种注入方式：有参构造输入</p>
+<p>​    3.2.2 第二种注入方式：有参构造输入</p>
 <p>​    (1) 创建类，定义属性，创建属性对应的有参构造方法</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Orders</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//属性</span>
@@ -347,10 +340,8 @@ book<span class="token punctuation">.</span><span class="token function">test</s
     <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg name<span class="token operator">=</span><span class="token string">"address"</span> value<span class="token operator">=</span><span class="token string">"China"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>constructor<span class="token operator">-</span>arg<span class="token operator">></span>
     <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"0"</span> value<span class="token operator">=</span><span class="token string">"evan"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>constructor<span class="token operator">-</span>arg<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>index指有参构造中的参数索引位置<span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
-<p>注入其他属性</p>
-<ol>
-<li><p>字面量</p>
-<p>设置空值</p>
+<h6 id="注入其他属性"><a href="#注入其他属性" class="headerlink" title="注入其他属性"></a>注入其他属性</h6><ol>
+<li><h6 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h6><p>设置空值</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>null值<span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"address"</span><span class="token operator">></span><span class="token operator">&lt;</span>null<span class="token operator">/</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span></code></pre>
 </li>
@@ -364,8 +355,7 @@ book<span class="token punctuation">.</span><span class="token function">test</s
 <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
 </code></pre>
 <ol start="2">
-<li><p>外部Bean</p>
-<p>（1）创建两个类service类和dao类（MVC）</p>
+<li><h6 id="外部Bean"><a href="#外部Bean" class="headerlink" title="外部Bean"></a>外部Bean</h6><p>（1）创建两个类service类和dao类（MVC）</p>
 <p>（2）在service调用dao里面的方法</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1. 原始方法</span>
 UserDao userDao <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserDaoImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//多态</span>
@@ -383,7 +373,242 @@ userDao<span class="token punctuation">.</span><span class="token function">upda
 </code></pre>
 </li>
 </ol>
-<pre><code></code></pre>
+<pre><code>
+
+3. ###### 内部Bean
+
+在配置属性值是对象的属性时，在&lt;peoperty&gt;内部嵌套配置该属性的对象值。
+
+例：
+
+（1） 一对多关系：企业和员工
+
+（2） 使用对象类型表示员工所属部门
+
+   (3） 在spring文件中配置
+
+```java
+public class Emp &#123;
+    private String ename;
+    private String gender;
+
+    //员工属于部门
+    private Dept dept;
+
+    public void setEname(String ename) &#123;
+        this.ename = ename;
+    &#125;
+
+    public void setGender(String gender) &#123;
+        this.gender = gender;
+    &#125;
+
+    public void setDept(Dept dept) &#123;
+        this.dept = dept;
+    &#125;
+&#125;
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>内部bean<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"emp"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Emp"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>设置两个普通属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"ename"</span> value<span class="token operator">=</span><span class="token string">"lucy"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"gender"</span> value<span class="token operator">=</span><span class="token string">"female"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>设置对象类型属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>内部bean，嵌套注入的对象属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dept"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"dept"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Dept"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dname"</span> value<span class="token operator">=</span><span class="token string">"安保部"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+</code></pre>
+<ol start="4">
+<li><h6 id="级联赋值"><a href="#级联赋值" class="headerlink" title="级联赋值"></a>级联赋值</h6><p>第一种写法</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"emp"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Emp"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>设置两个普通属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"ename"</span> value<span class="token operator">=</span><span class="token string">"lucy"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"gender"</span> value<span class="token operator">=</span><span class="token string">"female"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>级联赋值，先配置外部Bean，再注入属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dept"</span> ref<span class="token operator">=</span><span class="token string">"dept"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"dept"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Dept"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dname"</span> value<span class="token operator">=</span><span class="token string">"财务部"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+</code></pre>
+<p>第二种写法, 通过被引用对象的get方法，直接在<property>中配置对象的属性值</property></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"emp"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Emp"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>设置两个普通属性<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"ename"</span> value<span class="token operator">=</span><span class="token string">"lucy"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"gender"</span> value<span class="token operator">=</span><span class="token string">"female"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dept"</span> ref<span class="token operator">=</span><span class="token string">"dept"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>级联赋值，设置Dept对象的dname属性，需要在Emp中创建<span class="token function">getDept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"dept.dname"</span> value<span class="token operator">=</span><span class="token string">"技术部"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"dept"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Dept"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><h6 id="xml注入集合属性"><a href="#xml注入集合属性" class="headerlink" title="xml注入集合属性"></a>xml注入集合属性</h6><p>\1.   输入数组类型属性</p>
+<p>\2.   注入List集合类型属性</p>
+<p>\3.   注入Map集合属性</p>
+</li>
+</ol>
+<p>​        先在类里面定义属性和set方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//数组类型</span>
+    <span class="token keyword">private</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> courses<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//List集合</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> list<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//map集合属性</span>
+    <span class="token keyword">private</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> maps<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//set集合属性</span>
+    <span class="token keyword">private</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> sets<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCourses</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> courses<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>courses <span class="token operator">=</span> courses<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setList</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>String<span class="token operator">></span> list<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list <span class="token operator">=</span> list<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setMaps</span><span class="token punctuation">(</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> maps<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>maps <span class="token operator">=</span> maps<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>配置Spring文件</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token number">1</span><span class="token punctuation">.</span>集合类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+ <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"stu"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Student"</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>数组类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"courses"</span><span class="token operator">></span>
+         <span class="token operator">&lt;</span>array<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>数据库<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>java<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>计算机网络<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+         <span class="token operator">&lt;</span><span class="token operator">/</span>array<span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>list类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"list"</span><span class="token operator">></span>
+         <span class="token operator">&lt;</span>list<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>张三<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>小三<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+         <span class="token operator">&lt;</span><span class="token operator">/</span>list<span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>map类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"maps"</span><span class="token operator">></span>
+         <span class="token operator">&lt;</span>map<span class="token operator">></span>
+             <span class="token operator">&lt;</span>entry key<span class="token operator">=</span><span class="token string">"JAVA"</span> value<span class="token operator">=</span><span class="token string">"java"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>entry<span class="token operator">></span>
+             <span class="token operator">&lt;</span>entry key<span class="token operator">=</span><span class="token string">"PHP"</span> value<span class="token operator">=</span><span class="token string">"php"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>entry<span class="token operator">></span>
+         <span class="token operator">&lt;</span><span class="token operator">/</span>map<span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+
+     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>set类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+     <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"sets"</span><span class="token operator">></span>
+         <span class="token operator">&lt;</span>set<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>MySql<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+             <span class="token operator">&lt;</span>value<span class="token operator">></span>Redis<span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+         <span class="token operator">&lt;</span><span class="token operator">/</span>set<span class="token operator">></span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+ <span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+</code></pre>
+<ol start="6">
+<li><h6 id="在集合中设置对象类型"><a href="#在集合中设置对象类型" class="headerlink" title="在集合中设置对象类型"></a>在集合中设置对象类型</h6><p>类似于外部bean注入</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>注入list集合类型，值是对象<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"student"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Student"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"courseList"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>list<span class="token operator">></span>
+            <span class="token operator">&lt;</span>ref bean<span class="token operator">=</span><span class="token string">"course1"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>ref<span class="token operator">></span>
+            <span class="token operator">&lt;</span>ref bean<span class="token operator">=</span><span class="token string">"course2"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>ref<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>list<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>创建多个course对象<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"course1"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Course"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"cname"</span> value<span class="token operator">=</span><span class="token string">"Spring5"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"course2"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Course"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"cname"</span> value<span class="token operator">=</span><span class="token string">"Spring5"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+</li>
+</ol>
+<ol start="7">
+<li><h6 id="把集合注入部分提取出来"><a href="#把集合注入部分提取出来" class="headerlink" title="把集合注入部分提取出来"></a>把集合注入部分提取出来</h6><p>(1) 在spring配置文件中引入名称空间util</p>
+<pre class=" language-java"><code class="language-java">xmlns<span class="token operator">:</span>util<span class="token operator">=</span><span class="token string">"http://www.springframework.org/schema/util"</span>
+
+xsi<span class="token operator">:</span>schemaLocation<span class="token operator">=</span><span class="token string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-beans.xsd"</span><span class="token operator">></span>"
+</code></pre>
+<p>（2） 使用util标签</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token number">1</span><span class="token punctuation">.</span>提取list集合类型属性注入<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>util<span class="token operator">:</span>list id<span class="token operator">=</span><span class="token string">"bookList"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>value<span class="token operator">></span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+    <span class="token operator">&lt;</span>value<span class="token operator">></span><span class="token number">4</span><span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+    <span class="token operator">&lt;</span>value<span class="token operator">></span><span class="token number">3</span><span class="token operator">&lt;</span><span class="token operator">/</span>value<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>util<span class="token operator">:</span>list<span class="token operator">></span></code></pre>
+<p>（3） 引入</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token number">2</span><span class="token punctuation">.</span>提取list集合类型属性注入使用<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"book"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Book"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"list"</span> ref<span class="token operator">=</span><span class="token string">"bookList"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><h5 id="FactoryBean"><a href="#FactoryBean" class="headerlink" title="FactoryBean"></a>FactoryBean</h5><p>\1.   Spring有两种类型bean，一种普通bean，另一种工厂bean（FactoryBean）</p>
+<p>\2.   普通Bean：在配置文件中定义的bean类型就是返回类型</p>
+<p>\3.   工厂Bean: 在配置文件中定义的bean类型和返回类型可以不同</p>
+</li>
+</ol>
+<p>   第一步：创建类，让这个类为工厂bean，实现接口FactoryBean</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置mybean，定义bean类型为MyBean<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"myBean"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.factorybean.MyBean"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+
+    <span class="token comment" spellcheck="true">//implements FactoryBean</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyBean</span> <span class="token keyword">implements</span> <span class="token class-name">FactoryBean</span><span class="token operator">&lt;</span>Course<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//定义返回的是course类型</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Course <span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Course course<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Course</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        course<span class="token punctuation">.</span><span class="token function">setCname</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> course<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Class<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> <span class="token function">getObjectType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>   第二步：实现接口里的方法，在实现的方法中定义返回的bean类型</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    ApplicationContext content<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"bean3.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//bean配置文件中定义类型是MyBean，返回类型是Course</span>
+    Course course<span class="token operator">=</span>content<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"myBean"</span><span class="token punctuation">,</span> Course<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>course<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 
 
                 
