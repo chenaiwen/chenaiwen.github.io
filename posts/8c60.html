@@ -608,7 +608,85 @@ xsi<span class="token operator">:</span>schemaLocation<span class="token operato
     Course course<span class="token operator">=</span>content<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"myBean"</span><span class="token punctuation">,</span> Course<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>course<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>                                 </code></pre>
+<h5 id="3-3-Bean的作用域"><a href="#3-3-Bean的作用域" class="headerlink" title="3.3 Bean的作用域"></a>3.3 Bean的作用域</h5><ol>
+<li><p>单例和多例</p>
+<p>单例就是所有的请求都用一个对象来处理，多例就是每一个请求都用一个新对象来处理。</p>
+<p>之所以用单例，是因为没必要每个请求都新建一个对象，这样子既浪费CPU又浪费内存。</p>
+<p>之所以用多例，是为了防止并发问题；即一个请求改变了对象的状态，此时对象又处理另一个请求，而之前请求对对象状态的改变导致了对象对另一个请求做了错误的处理。</p>
+<p>当对象含有可改变的状态时（更精确的说就是在实际应用中该状态会改变），则多例，否则单例；</p>
+<p>在Spring默认模式下，bean是单实例对象</p>
+</li>
+</ol>
+<ol start="2">
+<li>如何设置单实例还是多实例</li>
+</ol>
+<p>（1） bean标签中的scope属性</p>
+<p>（2） scope属性值：</p>
+<p>​    a.   默认值，singleton，表示单实例对象</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"book"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Book"</span> scope<span class="token operator">=</span><span class="token string">"singleton"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+<p>​    b.   prototype, 表示是多实例对象</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"book"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.collectiontype.Book"</span> scope<span class="token operator">=</span><span class="token string">"prototype"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+<p>（3） singleton和prototype区别</p>
+<p>​        scope的值是singleton时，加载spring配置文件时就会创建单实例对象；当scope的值是prototype时，在调用getBean方法时才创建多实例对象。</p>
+<h5 id="3-4-bean生命周期"><a href="#3-4-bean生命周期" class="headerlink" title="3.4 bean生命周期"></a>3.4 bean生命周期</h5><p>（1）  通过构造器创建bean实例（无参构造）</p>
+<p>（2） 为bean的属性设置值和其他bean的引用（调用set方法）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Orders</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String oname<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//无参构造</span>
+    <span class="token keyword">public</span> <span class="token function">Orders</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第一步 执行无参数构造创建bean实例"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setOname</span><span class="token punctuation">(</span>String oname<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>oname <span class="token operator">=</span> oname<span class="token punctuation">;</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第二步 调用set方法设置属性的值"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//创建执行的初始化的方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">initMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第四步 调用bean的初始化方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>（3） 把bean实例传递给bean后置处理器的方法，调用bean初始化之前的方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> Object <span class="token function">postProcessBeforeInitialization</span><span class="token punctuation">(</span>Object bean<span class="token punctuation">,</span> String beanName<span class="token punctuation">)</span> <span class="token keyword">throws</span> BeansException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第三步 在初始化之前执行的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p>（4） 调用bean的初始化的方法</p>
+<p>（5）把bean实例传递给bean后置处理器的方法，调用bean初始化之后的方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> Object <span class="token function">postProcessAfterInitialization</span><span class="token punctuation">(</span>Object bean<span class="token punctuation">,</span> String beanName<span class="token punctuation">)</span> <span class="token keyword">throws</span> BeansException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"在初始化之后执行的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>（6） 使用bean</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>初始化方法init<span class="token operator">-</span>method和销毁方法destroy<span class="token operator">-</span>method<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"orders"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.spring5.bean.Orders"</span> init<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"initMethod"</span> destroy<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"destroyMethod"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"oname"</span> value<span class="token operator">=</span><span class="token string">"手机"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>property<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+<p>（7） 当容器关闭时，调用bean的销毁方法（需要进行配置销毁的方法）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//ApplicationContext content=new ClassPathXmlApplicationContext("bean4.xml");</span>
+
+    <span class="token comment" spellcheck="true">//接口ApplicationContext里没有close方法，可以用它的子接口或者是实现类</span>
+    ClassPathXmlApplicationContext content <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"bean4.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    Orders order<span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"orders"</span><span class="token punctuation">,</span>Orders<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第六步 获取创建bean实例对象，使用bean对象"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>order<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//bean实例需要用close方法手动销毁</span>
+    <span class="token comment" spellcheck="true">//ApplicationContext接口没有close方法，所以需要强转，或者不用ApplicationContext接口</span>
+    <span class="token punctuation">(</span><span class="token punctuation">(</span>ClassPathXmlApplicationContext<span class="token punctuation">)</span> content<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 
 
                 
