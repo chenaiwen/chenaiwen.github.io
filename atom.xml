@@ -6,7 +6,7 @@
   <link href="https://chenaiwen.github.io/atom.xml" rel="self"/>
   
   <link href="https://chenaiwen.github.io/"/>
-  <updated>2021-03-05T08:36:34.514Z</updated>
+  <updated>2021-03-08T02:48:10.417Z</updated>
   <id>https://chenaiwen.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JdbcTemplate</title>
+    <link href="https://chenaiwen.github.io/posts/8a3f.html"/>
+    <id>https://chenaiwen.github.io/posts/8a3f.html</id>
+    <published>2021-03-08T01:09:57.000Z</published>
+    <updated>2021-03-08T02:48:10.417Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JdbcTemplate&quot;&gt;&lt;a href=&quot;#JdbcTemplate&quot; class=&quot;headerlink&quot; title=&quot;JdbcTemplate&quot;&gt;&lt;/a&gt;JdbcTemplate&lt;/h1&gt;&lt;h2 id=&quot;1、概念&quot;&gt;&lt;a href=&quot;#1、概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Spring学习笔记" scheme="https://chenaiwen.github.io/categories/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Spring" scheme="https://chenaiwen.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AOP</title>
     <link href="https://chenaiwen.github.io/posts/1864.html"/>
     <id>https://chenaiwen.github.io/posts/1864.html</id>
     <published>2021-03-05T06:42:08.000Z</published>
-    <updated>2021-03-05T08:36:34.514Z</updated>
+    <updated>2021-03-05T08:36:41.279Z</updated>
     
     
       
